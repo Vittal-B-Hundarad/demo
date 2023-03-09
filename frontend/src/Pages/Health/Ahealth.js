@@ -57,11 +57,10 @@ const Ahealth = () => {
 
     if(getHdetailss)
     {
-      alert("Hello ")
       // localStorage.clear("healthinfo")
       localStorage.setItem("healthinfo",JSON.stringify(result));
       toast.info("Your updated form submitted")
-      navigate('/home')
+      navigate('/doctors')
     }
     else if(result.age){
       localStorage.setItem("healthinfo",JSON.stringify(result));
@@ -98,7 +97,7 @@ const Ahealth = () => {
             <input type="text" placeholder='Enter your Name' value={JSON.parse(auth).name} /><br/><br/>
 
             <label htmlFor="age" id='age'>Age:</label>
-            <input type="number" placeholder='Age' value={JSON.parse(getHdetailss1).age} onChange={(e)=>{setAge(e.target.value)}}/><br /><br />
+            <input  id="sage" type="number" placeholder='Age' value={JSON.parse(getHdetailss1).age} onChange={(e)=>{setAge(e.target.value)}}/><br /><br />
 
             Gender:<select name="gender" id="gender"  
             value={gender} onChange={(e)=>{setGender(e.target.value)}}>
@@ -121,9 +120,10 @@ const Ahealth = () => {
                 <input type="checkbox" id="fever" value="Eye Burning" onChange={handleChangedisease}/>Eye Burning <br />
               </div>
               <div className={symtomSelected==="injury"?"d-block":"d-none"}>
-                <input type="checkbox" id="injury" value="Sports" onChange={handleChangedisease} />Sports <br />
-                <input type="checkbox" id="injury" value="Accidental" onChange={handleChangedisease}  />Accidental <br />
-                <input type="checkbox" id="injury" value="dummy" onChange={handleChangedisease} />dummy <br />
+                <input type="checkbox" id="injury" value="Leg injury" onChange={handleChangedisease} />Leg Injury <br />
+                <input type="checkbox" id="injury" value="Muscle tear" onChange={handleChangedisease}  />Muscle Tear <br />
+                <input type="checkbox" id="injury" value="Facture" onChange={handleChangedisease} />Facture <br />
+                <input type="checkbox" id="injury" value="Skin burn" onChange={handleChangedisease} />Skin burn <br />
               </div>
               <div className={symtomSelected==="mentalhealth"?"d-block":"d-none"}>
                 <input type="checkbox" id="mentalhealth" value="Feeling Low" onChange={handleChangedisease}/>Feeling Low <br />
@@ -151,8 +151,8 @@ const Ahealth = () => {
             {/* <input type="text"  onChange={(e)=>{setName(e.target.value)}}  placeholder='Enter your Name' value={name}/><br/><br/> */}
             <input type="text" placeholder='Enter your Name' value={JSON.parse(auth).name}/><br/><br/>
 
-            <label htmlFor="age" id='age'>Age:</label>
-            <input type="number" placeholder='Age' value={age} onChange={(e)=>{setAge(e.target.value)}}/><br /><br />
+            <label htmlFor="age" >Age:</label>
+            <input type="number"id='age' placeholder='Age' value={age} onChange={(e)=>{setAge(e.target.value)}}/><br /><br />
 
             Gender:<select name="gender" id="gender"  
             value={gender} onChange={(e)=>{setGender(e.target.value)}}>
@@ -175,9 +175,10 @@ const Ahealth = () => {
                 <input type="checkbox" id="fever" value="Eye Burning" onChange={handleChangedisease}/>Eye Burning <br />
               </div>
               <div className={symtomSelected==="injury"?"d-block":"d-none"}>
-                <input type="checkbox" id="injury" value="Sports" onChange={handleChangedisease} />Sports <br />
-                <input type="checkbox" id="injury" value="Accidental" onChange={handleChangedisease}  />Accidental <br />
-                <input type="checkbox" id="injury" value="dummy" onChange={handleChangedisease} />dummy <br />
+              <input type="checkbox" id="injury" value="Leg injury" onChange={handleChangedisease} />Leg Injury <br />
+                <input type="checkbox" id="injury" value="Muscle tear" onChange={handleChangedisease}  />Muscle Tear <br />
+                <input type="checkbox" id="injury" value="Facture" onChange={handleChangedisease} />Facture <br />
+                <input type="checkbox" id="injury" value="Skin burn" onChange={handleChangedisease} />Skin burn <br />
               </div>
               <div className={symtomSelected==="mentalhealth"?"d-block":"d-none"}>
                 <input type="checkbox" id="mentalhealth" value="Feeling Low" onChange={handleChangedisease}/>Feeling Low <br />
@@ -186,7 +187,7 @@ const Ahealth = () => {
               </div>
             </form> 
             <center>
-            <input onClick={addHealth} type="button" id="submit" value="Submit"/>
+            <input id="submit" className="but123" onClick={addHealth} type="button"  value="Submit"/>
             </center>
         </div>
       </div>

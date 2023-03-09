@@ -12,7 +12,8 @@ import Login from './Pages/Login/Login';
 import SignUp from './Pages/comp1/SignUp';
 import Navbar from './Pages/nav/Nav';
 import Verifydetails from './Pages/Health/Verifydetails';
-
+import Doctors from './Pages/doctors/doctors';
+import Appointment from './Pages/doctors/appoint';
 function App() {
   return (
 
@@ -33,6 +34,8 @@ function App() {
       <Route path="/dashboard" element={<Dashboard />}></Route>
       <Route path="/addhealthdetails" element={<Ahealth />}></Route>
       <Route path="/verify" element={<Verifydetails />}></Route>
+      <Route path="/doctors" element={<Doctors />}></Route>
+      <Route path="/appoint" element={<Appointment />}></Route>
 
     </Routes>
     </BrowserRouter>
